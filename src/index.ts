@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get("/apartments", async (req: Request, res: Response) => {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   let apartments: Apartment[] = [];
 
   for (const vendor of vendors) {
